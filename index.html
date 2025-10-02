@@ -36,7 +36,7 @@
         <div class="max-w-[900px] w-full h-auto mt-3 px-4">
             <div class="w-full h-[300px] rounded-[1.75vw]"
                  style="
-                 background-image: url('assets/wavy.svg'), linear-gradient(rgb(0, 234, 255), rgb(0, 234, 255));
+                 background-image: url('assets/wavy.png'), linear-gradient(rgb(0, 234, 255), rgb(0, 234, 255));
                  background-repeat: no-repeat;
                  background-size: cover;
                  background-blend-mode: multiply;
@@ -52,190 +52,35 @@
                 <div class="text-[12px] font-[900] leading-[14.4px] font-satoshi bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
                     WHAT IS
                 </div>
-
                 <div class="text-[24px] font-[500] leading-[28.8px] font-satoshi text-[#FFFFFF] mt-1">
-                    Arkthos
+                    Arkthos?
+                </div>
+            </div>
+
+            <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
+                <div class="flex-grow bg-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
+                    <p class="font-satoshi text-[14px] text-[#D5D8E2]">
+                        Arkthos is an
+                        <span class="text-[#FFFFFF]">open-source C++ framework</span>
+                        for building
+                        <span class="text-[#FFFFFF]">state machine replication systems.</span>
+                    </p>
+                </div>
+                <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+                    <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>
+                    <img class="h-[60px] w-[60px] relative z-10" src="assets/cpp.svg" alt="CPP">
+                </div>
+            </div>
+            <div class="flex w-full h-auto gap-x-2 pb-2">
+                <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+                    <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>
+                    <img class="h-[80px] w-[80px] relative z-10" src="assets/linux.svg" alt="CPP">
+                </div>
+                <div class="flex-grow bg-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
+                    
                 </div>
             </div>
         </div>
     </div>
 </body>
-
-<!--<style>-->
-<!--    html, body {-->
-<!--        width: 100%;-->
-<!--        height: 100%;-->
-<!--        margin: 0;-->
-<!--        padding: 0;-->
-<!--        overflow: hidden;-->
-<!--    }-->
-
-<!--    nav {-->
-<!--        display: flex;-->
-<!--        justify-content: space-between;-->
-<!--        align-items: center;-->
-<!--        height: 65px;-->
-<!--        width: 100vw;-->
-<!--        border-bottom: 2px solid #202B4C;-->
-<!--        background-color: #070B19;-->
-<!--        color: white;-->
-<!--    }-->
-
-<!--    .logo {-->
-<!--        width: auto;-->
-<!--        padding-left: 20px;-->
-<!--        max-width: 125px;-->
-<!--        min-width: 10px;-->
-<!--    }-->
-
-<!--    .nav-bar {-->
-<!--        display: flex;-->
-<!--        align-items: center;-->
-<!--        justify-content: center;-->
-<!--        width: 40px;-->
-<!--        height: 40px;-->
-<!--        margin-right: 20px;-->
-<!--        border: 3px solid #19213b;-->
-<!--        border-radius: 50%;-->
-<!--        cursor: pointer;-->
-<!--    }-->
-
-<!--    .nav-bar:hover {-->
-<!--        background-color: #18193b;-->
-<!--    }-->
-
-<!--    .nav-dropdown {-->
-<!--        display: none;-->
-<!--        position: absolute;-->
-<!--    }-->
-
-<!--    header {-->
-<!--        display: flex;-->
-<!--        flex-direction: column;-->
-<!--        width: 100vw;-->
-<!--        height: auto;-->
-<!--        justify-content: center;-->
-<!--        align-items: center;-->
-<!--        padding-top: 1vh;-->
-<!--        padding-bottom: 1vh;-->
-<!--        background-color: #070c1a;-->
-<!--    }-->
-
-<!--    .mission {-->
-<!--        width: 70vw;-->
-<!--        height: 20vh;-->
-<!--        background-image: url("assets/wavy.svg"), linear-gradient(rgb(0, 234, 255), rgb(0, 234, 255));-->
-<!--        background-repeat: no-repeat;-->
-<!--        background-size: cover;-->
-<!--        background-blend-mode: multiply;-->
-<!--        border-radius: calc(0.025*70vw);-->
-<!--        overflow: hidden;-->
-
-<!--        display: flex;-->
-<!--        justify-content: center;-->
-<!--        align-items: center;-->
-<!--        padding-bottom: 20px;-->
-<!--    }-->
-
-<!--    .mission-text {-->
-<!--        margin-top: 60px;-->
-<!--        text-align: center;-->
-<!--        font-family: Satoshi, sans-serif;-->
-<!--        color: #070B19;-->
-<!--        font-size: clamp(12px, 5vh, 28px);-->
-<!--        font-style: normal;-->
-<!--        font-weight: 700;-->
-<!--        line-height: 120%;-->
-<!--    }-->
-
-<!--    .what-is-it {-->
-<!--        /*flex-direction: column;*/-->
-<!--        /*justify-content: flex-end;*/-->
-<!--        /*align-items: flex-start;*/-->
-<!--        /*align-self: stretch;*/-->
-<!--        /*padding: 32px 28px 12px 28px;*/-->
-<!--        padding-top: 28px;-->
-<!--        padding-bottom: 28px;-->
-<!--        width: 69vw;-->
-<!--        height: 50px;-->
-<!--        color: white;-->
-<!--    }-->
-
-<!--    .what-is-text {-->
-<!--        font-family: Satoshi, sans-serif;-->
-<!--        font-size: 12px;-->
-<!--        font-style: normal;-->
-<!--        font-weight: 900;-->
-<!--        line-height: 120%;-->
-<!--        background: linear-gradient(90deg, #0076FF 0%, #00ABFF 100%);-->
-<!--        -webkit-background-clip: text;-->
-<!--        background-clip: text;-->
-<!--        -webkit-text-fill-color: transparent;-->
-<!--    }-->
-
-<!--    .what-is-arkthos-text {-->
-<!--        font-family: Satoshi, sans-serif;-->
-<!--        font-size: 24px;-->
-<!--        font-style: normal;-->
-<!--        font-weight: 500;-->
-<!--        line-height: 120%;-->
-<!--    }-->
-
-<!--    @media (max-width: 1080px) {-->
-
-<!--        nav {-->
-<!--            height: 100px;-->
-<!--        }-->
-
-<!--        .mission {-->
-<!--            width: 98vw;-->
-<!--            margin-left: 2vw;-->
-<!--            margin-right: 2vw;-->
-<!--        }-->
-<!--        /*.mission-text {*/-->
-<!--        /*    font-size: 20px;*/-->
-<!--        /*}*/-->
-<!--        .what-is-it {-->
-<!--            width: 97vw;-->
-<!--        }-->
-<!--    }-->
-<!--</style>-->
-
-<!--<body>-->
-<!--&lt;!&ndash;    <nav>&ndash;&gt;-->
-<!--&lt;!&ndash;        <img class="logo" src="assets/logo.svg" alt="Arkthos">&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="nav-bar" id="navButton">&ndash;&gt;-->
-<!--&lt;!&ndash;            <img src="assets/nav.svg" alt="nav-logo">&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="nav-dropdown" id="dropdownMenu">&ndash;&gt;-->
-<!--&lt;!&ndash;                <div>Option 1</div>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;    </nav>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <header>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="mission">&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="mission-text">&ndash;&gt;-->
-<!--&lt;!&ndash;                A modern open-source C++ engine for fast, flexible, and reliable state machine replication.&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="what-is-it">&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="what-is-text">WHAT IS</div>&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class = "what-is-arkthos-text">Arkthos</div>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-
-
-<!--&lt;!&ndash;    </header>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <script>&ndash;&gt;-->
-<!--&lt;!&ndash;        const navButton = document.getElementById("navButton");&ndash;&gt;-->
-<!--&lt;!&ndash;        const dropdownMenu = document.getElementById("dropdownMenu");&ndash;&gt;-->
-<!--&lt;!&ndash;        navButton.addEventListener("click", () => {&ndash;&gt;-->
-<!--&lt;!&ndash;            dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';&ndash;&gt;-->
-<!--&lt;!&ndash;        })&ndash;&gt;-->
-
-<!--&lt;!&ndash;        window.addEventListener("click", (e) => {&ndash;&gt;-->
-<!--&lt;!&ndash;            if (!navButton.contains(e.target)) dropdownMenu.style.display = 'none';&ndash;&gt;-->
-<!--&lt;!&ndash;        })&ndash;&gt;-->
-<!--&lt;!&ndash;    </script>&ndash;&gt;-->
-<!--</body>-->
 </html>
