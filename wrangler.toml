@@ -1,0 +1,6 @@
+name = "arkthos-site"
+compatibility_date = "2025-10-03"
+
+[site]
+bucket = "./"
+entry-point = "workers-site"
