@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Arkthos</title>
+
+    <!-- Import custom font -->
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        /* Extend Tailwind config to include Satoshi font */
         tailwind.config = {
             theme: {
                 extend: {
@@ -18,69 +23,223 @@
     </script>
 </head>
 
-<body class = "bg-[#202B4C]">
-    <div class="w-full h-[110px] bg-[#070B19] flex items-center border-b border-[#202B4C]">
-        <div class="max-w-[900px] mx-auto flex items-center w-full px-5">
-            <img class="h-9 w-auto" src="assets/logo.svg" alt="Arkthos">
-            <div class="flex space-x-5 ml-auto">
-                <div class="h-16 w-16 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
-                    <img class="h-10 w-10" src="assets/git.svg" alt="Git">
-                </div>
-                <div class="h-16 w-16 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
-                    <img class="h-12 w-12" src="assets/message.svg" alt="Contact">
-                </div>
+<body class="bg-[#070B19] font-satoshi">
+
+<!-- Floating back-to-top button -->
+<button id="scrollTopBtn"
+        class="fixed bottom-6 right-6 bg-[#00ABFF] hover:bg-[#0076FF]
+               p-3 rounded-full shadow-lg transition-colors duration-75 flex items-center justify-center z-10">
+    <img src="assets/arrowup.svg" alt="Back to top" class="w-14 h-14 lg:w-10 lg:h-10" />
+</button>
+<script>
+    // Scroll smoothly to top when clicked
+    document.getElementById("scrollTopBtn").addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+<!-- ================= HEADER / NAVBAR ================= -->
+<div class="w-full h-[110px] bg-[#070B19] flex items-center border-b border-[#202B4C]">
+    <div class="max-w-[900px] mx-auto flex items-center w-full px-5">
+        <!-- Logo -->
+        <img class="h-9 w-auto" src="assets/logo.svg" alt="Arkthos">
+
+        <!-- Right-side icons -->
+        <div class="flex space-x-5 ml-auto">
+            <!-- GitHub icon link -->
+            <a href="https://github.com/arkthos" target="_blank"
+               class="h-16 w-16 border-2 border-[#202B4C] rounded-full flex items-center justify-center hover:border-[#00ABFF] transition-colors">
+                <img class="h-10 w-10" src="assets/git.svg" alt="Git">
+            </a>
+            <!-- Contact/message icon (not linked yet) -->
+            <div class="h-16 w-16 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
+                <img class="h-12 w-12" src="assets/message.svg" alt="Contact">
             </div>
         </div>
     </div>
-    <div class="w-full bg-[#070B19] flex justify-center">
-        <div class="max-w-[900px] w-full h-auto mt-3 px-4">
-            <div class="w-full h-[300px] rounded-[1.75vw]"
-                 style="
-                 background-image: url('assets/wavy.png'), linear-gradient(rgb(0, 234, 255), rgb(0, 234, 255));
-                 background-repeat: no-repeat;
-                 background-size: cover;
-                 background-blend-mode: multiply;
-            ">
-            </div>
+</div>
 
-            <div class="w-full h-16 mt-[-40px] rounded-b-[1.75vw]"
-                 style="background-color: #009FCC; filter: blur(40px); opacity: 0.3;">
-            </div>
+<!-- ================= HERO SECTION ================= -->
+<div class="w-full bg-[#070B19] flex justify-center">
+    <div class="max-w-[900px] w-full h-auto mt-4 mb-4 px-4">
 
+        <!-- Banner with background image + overlay text -->
+        <div class="w-full h-[300px] rounded-[1.75vw] relative"
+             style="
+                     background-image: url('assets/wavy.png'), linear-gradient(rgb(0, 234, 255), rgb(0, 234, 255));
+                     background-repeat: no-repeat;
+                     background-size: cover;
+                     background-blend-mode: multiply;
+                ">
+            <p class="absolute inset-0 flex items-end justify-center text-center font-[700] text-[38px] leading-[120%] text-[#070B19] px-4 pb-8 md:pb-12 lg:pb-16">
+                A modern open-source C++ engine for fast, flexible, and reliable state machine replication.
+            </p>
+        </div>
 
-            <div class="pl-2 mt-4 text-left font-satoshi">
-                <div class="text-[12px] font-[900] leading-[14.4px] font-satoshi bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
-                    WHAT IS
-                </div>
-                <div class="text-[24px] font-[500] leading-[28.8px] font-satoshi text-[#FFFFFF] mt-1">
-                    Arkthos?
-                </div>
-            </div>
+        <!-- Decorative glow under hero -->
+        <div class="w-full h-16 mt-[-40px] rounded-b-[1.75vw]"
+             style="background-color: #009FCC; filter: blur(40px); opacity: 0.3;">
+        </div>
 
-            <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
-                <div class="flex-grow bg-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
-                    <p class="font-satoshi text-[14px] text-[#D5D8E2]">
-                        Arkthos is an
-                        <span class="text-[#FFFFFF]">open-source C++ framework</span>
-                        for building
-                        <span class="text-[#FFFFFF]">state machine replication systems.</span>
-                    </p>
-                </div>
-                <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
-                    <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>
-                    <img class="h-[60px] w-[60px] relative z-10" src="assets/cpp.svg" alt="CPP">
-                </div>
+        <!-- "What is Arkthos?" Section -->
+        <div class="pl-2 mt-8 text-left">
+            <div class="text-[12px] font-black leading-[120%] bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
+                WHAT IS
             </div>
-            <div class="flex w-full h-auto gap-x-2 pb-2">
-                <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
-                    <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>
-                    <img class="h-[80px] w-[80px] relative z-10" src="assets/linux.svg" alt="CPP">
-                </div>
-                <div class="flex-grow bg-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
-                    
-                </div>
+            <div class="text-[24px] font-medium leading-[120%] text-white mt-1">
+                Arkthos?
+            </div>
+        </div>
+
+        <!-- Info cards row 1 -->
+        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
+            <!-- Text card -->
+            <div class="flex-grow bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+                    Arkthos is an
+                    <span class="text-[#FFFFFF]">open-source C++ framework</span>
+                    for building
+                    <span class="text-[#FFFFFF]">state machine replication systems.</span>
+                </p>
+            </div>
+            <!-- Icon card -->
+            <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>
+                <img class="w-[50px] relative z-10" src="assets/cpp.png" alt="CPP">
+            </div>
+        </div>
+
+        <!-- Info cards row 2 -->
+        <div class="flex w-full h-auto gap-x-2 pb-2">
+            <!-- Icon card -->
+            <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>
+                <img class="w-[75px] relative z-10" src="assets/linux.png" alt="Linux">
+            </div>
+            <!-- Text card -->
+            <div class="flex-grow bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+                    By integrating with modern Linux kernel tools like io_uring, Arkthos pushes the
+                    <span class="text-white">boundaries of performance and efficiency</span>
+                    in distributed systems.
+                </p>
             </div>
         </div>
     </div>
+</div>
+
+<!-- ================= KEY CAPABILITIES ================= -->
+<div class="w-full bg-[#0D1326] flex justify-center border-t border-[#202B4C]">
+    <div class="max-w-[900px] w-full h-auto mb-4 px-4">
+        <div class="mt-10 pl-2 text-left">
+            <div class="text-[12px] font-black leading-[120%] bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
+                OUR
+            </div>
+            <div class="text-[24px] font-medium leading-[120%] text-white mt-1">
+                Key Capabilities
+            </div>
+        </div>
+
+        <!-- Grid of capability cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-auto pt-2 pb-2">
+
+            <!-- Capability 1 -->
+            <div class="bg-gradient-to-b from-[#070B19] to-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
+                    <img class="h-9 w-auto" src="assets/blocks.svg" alt="Blocks">
+                </div>
+                <p class="font-[400] text-[18px] text-[#D5D8E2]">
+                    <span class="block text-[19px] text-white mb-2">Configurable Building Blocks</span>
+                    Core components like the state machine, consensus, log, snapshots, and metrics are all configurable -- so you can tailor Arkthos to your workload.
+                </p>
+            </div>
+
+            <!-- Capability 2 -->
+            <div class="bg-gradient-to-b from-[#070B19] to-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
+                    <img class="h-9 w-auto" src="assets/lightning.svg" alt="Lightning">
+                </div>
+                <p class="font-[400] text-[18px] text-[#D5D8E2]">
+                    <span class="block text-[19px] text-white mb-2">Kernel-Level Performance</span>
+                    Leverage Linux’s latest innovations, including io_uring, to achieve lower latency and higher throughput in critical paths.
+                </p>
+            </div>
+
+            <!-- Capability 3 -->
+            <div class="bg-gradient-to-b from-[#070B19] to-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
+                    <img class="h-9 w-auto" src="assets/office.svg" alt="Office">
+                </div>
+                <p class="font-[400] text-[18px] text-[#D5D8E2]">
+                    <span class="block text-[19px] text-white mb-2">Flexible Consensus</span>
+                    Choose between leader-based protocols or leaderless protocols depending on your system requirements.
+                </p>
+            </div>
+
+            <!-- Capability 4 (full-width) -->
+            <div class="bg-gradient-to-b from-[#070B19] to-[#0D1326] rounded-3xl border border-1 border-[#202B4C] p-4 lg:col-span-3">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
+                    <img class="h-9 w-auto" src="assets/scale.svg" alt="Scale">
+                </div>
+                <p class="font-[400] text-[18px] text-[#D5D8E2]">
+                    <span class="block text-[19px] text-white mb-2">Designed for Any Scale</span>
+                    Run Arkthos within a single data center or across globally distributed clusters for availability and performance.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= WHY CHOOSE SECTION ================= -->
+<div class="w-full bg-[#070B19] flex justify-center">
+    <div class="max-w-[900px] w-full h-auto mt-4 mb-4 px-4">
+
+        <div class="pl-2 mt-8 text-left">
+            <div class="text-[12px] font-black leading-[120%] bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
+                WHY SHOULD YOU CHOOSE
+            </div>
+            <div class="text-[24px] font-medium leading-[120%] text-white mt-1">
+                Arkthos?
+            </div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
+            <img class="w-[100px] min-h-[60px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center" src="assets/lock.png" alt="Lock">
+            <div class="flex-grow bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+                    Distributed systems are never one-size-fits-all. Arkthos is built for engineers who need control, performance, and flexibility.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
+            <div class="flex-grow bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
+                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+                    It doesn’t force you into one protocol or architecture -- it gives you the tools to experiment and optimize.
+                </p>
+            </div>
+            <img class="w-[100px] min-h-[60px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center" src="assets/chip.png" alt="Chip">
+        </div>
+
+        <!-- Footer links -->
+        <div class="pl-2 mt-8 text-left">
+            <a href="https://github.com/arkthos"
+               class="text-[24px] font-medium leading-[120%] text-white hover:text-[#00ABFF] transition-colors">
+                GitHub
+            </a>
+            <div class="text-[24px] font-medium leading-[120%] text-white mt-2">
+                Contact us
+            </div>
+
+            <!-- Footer logo -->
+            <img class="h-6 w-auto mt-14" src="assets/logo.svg" alt="Arkthos">
+            <div class="text-[14px] font-400 leading-[120%] text-[#D5D8E2] mt-2 mb-8">
+                © 2025. Arkthos.
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
