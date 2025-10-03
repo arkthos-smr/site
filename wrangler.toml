@@ -1,5 +1,0 @@
-name = "arkthos-site"
-compatibility_date = "2025-10-03"
-
-[site]
-bucket = "./"  # points to your repo root containing index.html + assets
