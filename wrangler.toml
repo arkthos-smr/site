@@ -1,7 +1,5 @@
 name = "arkthos-site"
 compatibility_date = "2025-10-03"
-type = "javascript"
 
 [site]
-bucket = "./"        # points to your repo root containing index.html and assets
-entry-point = "workers-site"
+bucket = "./"  # points to your repo root containing index.html + assets
