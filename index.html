@@ -118,17 +118,17 @@
         }
 
         /* For very small screens */
-        @media (max-width: 400px) {
-            .xs-compact-text {
-                font-size: 14px;
-            }
+        /*@media (max-width: 400px) {*/
+        /*    .xs-compact-text {*/
+        /*        font-size: 14px;*/
+        /*    }*/
 
-            .xs-icon-size {
-                width: 70px;
-                height: 70px;
-                min-width: 70px;
-            }
-        }
+        /*    .xs-icon-size {*/
+        /*        width: 70px;*/
+        /*        height: 70px;*/
+        /*        min-width: 70px;*/
+        /*    }*/
+        /*}*/
     </style>
 </head>
 
@@ -156,11 +156,11 @@
         <!-- Right-side icons -->
         <div class="flex space-x-3 md:space-x-5 ml-auto">
             <!-- GitHub icon link -->
-            <a href="https://github.com/arkthos-smr" target="_blank" class="mobile-header-icon-size xs-icon-size md:h-14 md:w-14 border-2 border-[#202B4C] rounded-full flex items-center justify-center hover:border-[#00ABFF] transition-colors">
+            <a href="https://github.com/arkthos-smr" target="_blank" class="mobile-header-icon-size md:h-14 md:w-14 border-2 border-[#202B4C] rounded-full flex items-center justify-center hover:border-[#00ABFF] transition-colors">
                 <img class="h-2/3 w-2/3" src="assets/git.svg" alt="Git">
             </a>
             <!-- Contact/message icon (not linked yet) -->
-            <div class="mobile-header-icon-size xs-icon-size md:h-14 md:w-14 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
+            <div class="mobile-header-icon-size md:h-14 md:w-14 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
                 <img class="h-2/3 w-2/3" src="assets/message.svg" alt="Contact">
             </div>
         </div>
@@ -200,7 +200,7 @@
                 </p>
             </div>
             <!-- Icon card -->
-            <div style="--icon-max-height: 50%;" class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[100px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+            <div style="--icon-max-height: 50%;" class="bg-[#070B19] mobile-icon-size md:w-[100px] md:min-h-[100px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
                 <img class="w-[40px] md:w-[50px] relative z-10" src="assets/cpp.png" alt="CPP">
             </div>
         </div>
@@ -208,12 +208,12 @@
         <!-- Info cards row 2 - Side by side layout on all screens -->
         <div class="flex w-full h-auto gap-x-2 pb-2 mobile-side-layout">
             <!-- Icon card -->
-            <div class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[100px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+            <div class="bg-[#070B19] mobile-icon-size md:w-[100px] md:min-h-[100px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
                 <img class="w-[60px] md:w-[75px] relative z-10" src="assets/linux.png" alt="Linux">
             </div>
             <!-- Text card -->
             <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
-                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
+                <p class="font-[400] mobile-text-size mobile-compact-text md:text-[20px] text-[#D5D8E2]">
                     By integrating with modern Linux kernel tools like io_uring, Arkthos pushes the
                     <span class="text-white">boundaries of performance and efficiency</span>
                     in distributed systems.
@@ -300,11 +300,11 @@
 
         <!-- Row 1 - Side by side layout on all screens -->
         <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2 mobile-side-layout">
-            <div class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[60px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center overflow-hidden">
+            <div class="bg-[#070B19] mobile-icon-size md:w-[100px] md:min-h-[60px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center overflow-hidden">
                 <img class="w-[50px] md:w-[60px]" src="assets/lock.png" alt="Lock">
             </div>
             <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
-                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
+                <p class="font-[400] mobile-text-size mobile-compact-text  md:text-[20px] text-[#D5D8E2]">
                     Distributed systems are never one-size-fits-all. Arkthos is built for engineers who need control, performance, and flexibility.
                 </p>
             </div>
@@ -313,11 +313,11 @@
         <!-- Row 2 - Side by side layout on all screens -->
         <div class="flex w-full items-stretch gap-x-2 pb-2 mobile-side-layout">
             <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
-                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
+                <p class="font-[400] mobile-text-size mobile-compact-text md:text-[20px] text-[#D5D8E2]">
                     It doesn't force you into one protocol or architecture -- it gives you the tools to experiment and optimize.
                 </p>
             </div>
-            <div class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[60px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center overflow-hidden">
+            <div class="bg-[#070B19] mobile-icon-size md:w-[100px] md:min-h-[60px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center overflow-hidden">
                 <img class="w-[50px] md:w-[60px]" src="assets/chip.png" alt="Chip">
             </div>
         </div>
