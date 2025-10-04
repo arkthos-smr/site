@@ -22,7 +22,26 @@
             }
         }
     </script>
+
+    <style>
+        /* Animate background image position (sliding effect) */
+        @keyframes slideBg {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .animate-bg {
+            background-image: url('assets/wavy.png'), linear-gradient(to bottom, rgba(0,11,150,0.6), rgba(0,200,255,0.3));
+            background-repeat: repeat-x, no-repeat;
+            background-size: 200% auto, cover;
+            background-position: 0% 50%, center;
+            background-blend-mode: overlay; /* or multiply */
+            animation: slideBg 10s linear infinite;
+        }
+
+    </style>
 </head>
+
 
 <body class="bg-[#070B19] font-satoshi">
 
@@ -64,13 +83,7 @@
     <div class="max-w-[900px] w-full h-auto mt-4 mb-4 px-4">
 
         <!-- Banner with background image + overlay text -->
-        <div class="w-full h-[300px] rounded-[1.75vw] relative"
-             style="
-                     background-image: url('assets/wavy.png'), linear-gradient(rgb(0, 234, 255), rgb(0, 234, 255));
-                     background-repeat: no-repeat;
-                     background-size: cover;
-                     background-blend-mode: multiply;
-                ">
+        <div class="w-full h-[275px] rounded-[1.75vw] relative overflow-hidden animate-bg">
             <p class="absolute inset-0 flex items-end justify-center text-center font-[700] text-[38px] leading-[120%] text-[#070B19] px-4 pb-8 md:pb-12 lg:pb-16">
                 A modern open-source C++ engine for fast, flexible, and reliable state machine replication.
             </p>
