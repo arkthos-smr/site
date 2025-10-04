@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>arkthos</title>
 
     <!-- Import custom font -->
@@ -18,6 +19,9 @@
                     fontFamily: {
                         satoshi: ['Satoshi', 'sans-serif'],
                     },
+                    screens: {
+                        'xs': '475px',
+                    }
                 }
             }
         }
@@ -39,9 +43,94 @@
             animation: slideBg 10s linear infinite;
         }
 
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .mobile-hero-height {
+                height: 200px;
+            }
+
+            .mobile-card-padding {
+                padding: 1.5rem 1rem;
+            }
+
+            .mobile-text-size {
+                font-size: 16px;
+            }
+
+            .mobile-section-spacing {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .mobile-grid {
+                display: grid;
+                grid-template-columns: 1fr; /* single column on mobile */
+            }
+
+            .mobile-icon-size {
+                width: 80px;       /* keep width */
+                min-width: 80px;   /* prevent shrinking */
+                height: auto;      /* allow height to grow */
+                align-self: stretch; /* stretch to match sibling height in flex */
+                display: flex;     /* needed to center content */
+                justify-content: center;
+                align-items: center;
+                --icon-max-height: 100%;
+            }
+
+            .mobile-icon-size img {
+                max-height: var(--icon-max-height);
+                width: auto;
+            }
+
+            .mobile-header-icon-size {
+                width: 50px;
+                height: 50px;          /* same as width for perfect circle */
+                min-width: 50px;       /* prevent shrinking */
+                border-radius: 50%;    /* full circle */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mobile-header-icon-size img {
+                max-width: 60%;  /* scale the icon relative to the container */
+                max-height: 60%;
+                width: auto;
+                height: auto;
+            }
+
+
+            .mobile-rounded {
+                border-radius: 1.5rem;
+            }
+
+            .mobile-side-layout {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .mobile-compact-text {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 400px) {
+            .xs-compact-text {
+                font-size: 14px;
+            }
+
+            .xs-icon-size {
+                width: 70px;
+                height: 70px;
+                min-width: 70px;
+            }
+        }
     </style>
 </head>
-
 
 <body class="bg-[#070B19] font-satoshi">
 
@@ -49,7 +138,7 @@
 <button id="scrollTopBtn"
         class="fixed bottom-6 right-6 bg-[#00ABFF] hover:bg-[#0076FF]
                p-3 rounded-full shadow-lg transition-colors duration-50 flex items-center justify-center z-10">
-    <img src="assets/arrowup.svg" alt="Back to top" class="w-14 h-14 lg:w-10 lg:h-10" />
+    <img src="assets/arrowup.svg" alt="Back to top" class="w-10 h-10" />
 </button>
 <script>
     // Scroll smoothly to top when clicked
@@ -59,19 +148,19 @@
 </script>
 
 <!-- ================= HEADER / NAVBAR ================= -->
-<div class="w-full h-[110px] bg-[#070B19] flex items-center">
-    <div class="max-w-[900px] mx-auto flex items-center w-full px-5">
+<div class="w-full h-[80px] md:h-[110px] bg-[#070B19] flex items-center">
+    <div class="max-w-[900px] mx-auto flex items-center w-full px-4 md:px-5">
         <!-- Logo -->
-        <img class="h-9 w-auto" src="assets/logo.svg" alt="Arkthos">
+        <img class="h-7 md:h-9 w-auto" src="assets/logo.svg" alt="Arkthos">
 
         <!-- Right-side icons -->
-        <div class="flex space-x-5 ml-auto">
+        <div class="flex space-x-3 md:space-x-5 ml-auto">
             <!-- GitHub icon link -->
-            <a href="https://github.com/arkthos-smr" target="_blank" class="h-20 w-20 border-2 border-[#202B4C] rounded-full flex items-center justify-center hover:border-[#00ABFF] transition-colors">
+            <a href="https://github.com/arkthos-smr" target="_blank" class="mobile-header-icon-size xs-icon-size md:h-14 md:w-14 border-2 border-[#202B4C] rounded-full flex items-center justify-center hover:border-[#00ABFF] transition-colors">
                 <img class="h-2/3 w-2/3" src="assets/git.svg" alt="Git">
             </a>
             <!-- Contact/message icon (not linked yet) -->
-            <div class="h-20 w-20 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
+            <div class="mobile-header-icon-size xs-icon-size md:h-14 md:w-14 border-2 border-[#202B4C] rounded-full flex items-center justify-center">
                 <img class="h-2/3 w-2/3" src="assets/message.svg" alt="Contact">
             </div>
         </div>
@@ -83,32 +172,27 @@
     <div class="max-w-[900px] w-full h-auto mt-4 mb-4 px-4">
 
         <!-- Banner with background image + overlay text -->
-        <div class="w-full h-[275px] rounded-[1.75vw] relative overflow-hidden animate-bg">
-            <p class="absolute inset-0 flex items-end justify-center text-center font-[700] text-[38px] leading-[120%] text-[#070B19] px-4 pb-8 md:pb-12 lg:pb-16">
+        <div class="w-full mobile-hero-height md:h-[275px] mobile-rounded md:rounded-[1.75vw] relative overflow-hidden animate-bg">
+            <p class="absolute inset-0 flex items-end justify-center text-center font-[700] text-[24px] md:text-[38px] leading-[120%] text-[#070B19] px-4 pb-6 md:pb-16">
                 A modern open-source C++ engine for fast, flexible, and reliable state machine replication.
             </p>
         </div>
 
-        <!-- Decorative glow under hero -->
-<!--        <div class="w-full h-16 mt-[-40px] rounded-b-[1.75vw]"-->
-<!--             style="background-color: #009FCC; filter: blur(40px); opacity: 0.3;">-->
-<!--        </div>-->
-
         <!-- "What is Arkthos?" Section -->
-        <div class="pl-2 mt-16 text-left">
+        <div class="pl-2 mt-10 md:mt-16 text-left">
             <div class="text-[12px] font-black leading-[120%] bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
                 WHAT IS
             </div>
-            <div class="text-[24px] font-medium leading-[120%] text-white mt-1">
+            <div class="text-[20px] md:text-[24px] font-medium leading-[120%] text-white mt-1">
                 Arkthos?
             </div>
         </div>
 
-        <!-- Info cards row 1 -->
-        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
+        <!-- Info cards row 1 - Side by side layout on all screens -->
+        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2 mobile-side-layout">
             <!-- Text card -->
-            <div class="flex-grow bg-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+            <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
                     Arkthos is an
                     <span class="text-[#FFFFFF]">open-source C++ framework</span>
                     for building
@@ -116,22 +200,20 @@
                 </p>
             </div>
             <!-- Icon card -->
-            <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
-<!--                <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>-->
-                <img class="w-[50px] relative z-10" src="assets/cpp.png" alt="CPP">
+            <div style="--icon-max-height: 50%;" class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[100px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+                <img class="w-[40px] md:w-[50px] relative z-10" src="assets/cpp.png" alt="CPP">
             </div>
         </div>
 
-        <!-- Info cards row 2 -->
-        <div class="flex w-full h-auto gap-x-2 pb-2">
+        <!-- Info cards row 2 - Side by side layout on all screens -->
+        <div class="flex w-full h-auto gap-x-2 pb-2 mobile-side-layout">
             <!-- Icon card -->
-            <div class="bg-[#070B19] w-[100px] min-h-[100px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
-<!--                <div class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-10%] w-20 h-20 rounded-full bg-[#009FCC] opacity-15 blur-[20px] z-0"></div>-->
-                <img class="w-[75px] relative z-10" src="assets/linux.png" alt="Linux">
+            <div class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[100px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center relative overflow-hidden">
+                <img class="w-[60px] md:w-[75px] relative z-10" src="assets/linux.png" alt="Linux">
             </div>
             <!-- Text card -->
-            <div class="flex-grow bg-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+            <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
                     By integrating with modern Linux kernel tools like io_uring, Arkthos pushes the
                     <span class="text-white">boundaries of performance and efficiency</span>
                     in distributed systems.
@@ -144,58 +226,58 @@
 <!-- ================= KEY CAPABILITIES ================= -->
 <div class="w-full bg-[#0D1326] flex justify-center">
     <div class="max-w-[900px] w-full h-auto mb-4 px-4">
-        <div class="mt-10 pl-2 text-left">
+        <div class="mt-8 md:mt-10 pl-2 text-left">
             <div class="text-[12px] font-black leading-[120%] bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
                 OUR
             </div>
-            <div class="text-[24px] font-medium leading-[120%] text-white mt-1">
+            <div class="text-[20px] md:text-[24px] font-medium leading-[120%] text-white mt-1">
                 Key Capabilities
             </div>
         </div>
 
         <!-- Grid of capability cards -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-auto pt-2 pb-2">
+        <div class="mobile-grid md:grid md:grid-cols-1 lg:grid-cols-3 gap-2 mx-auto pt-2 pb-2">
 
             <!-- Capability 1 -->
-            <div class="bg-[#070B19] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
-                    <img class="h-9 w-auto" src="assets/blocks.svg" alt="Blocks">
+            <div class="bg-[#070B19] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-3 md:p-4">
+                    <img class="h-7 md:h-9 w-auto" src="assets/blocks.svg" alt="Blocks">
                 </div>
-                <p class="font-[400] text-[18px] text-[#D5D8E2]">
-                    <span class="block text-[19px] text-white mb-2">Configurable Building Blocks</span>
+                <p class="font-[400] mobile-text-size md:text-[18px] text-[#D5D8E2] mt-3">
+                    <span class="block text-[17px] md:text-[19px] text-white mb-2">Configurable Building Blocks</span>
                     Core components like the state machine, consensus, log, snapshots, and metrics are all configurable -- so you can tailor Arkthos to your workload.
                 </p>
             </div>
 
             <!-- Capability 2 -->
-            <div class="bg-[#070B19] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
-                    <img class="h-9 w-auto" src="assets/lightning.svg" alt="Lightning">
+            <div class="bg-[#070B19] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-3 md:p-4">
+                    <img class="h-7 md:h-9 w-auto" src="assets/lightning.svg" alt="Lightning">
                 </div>
-                <p class="font-[400] text-[18px] text-[#D5D8E2]">
-                    <span class="block text-[19px] text-white mb-2">Kernel-Level Performance</span>
-                    Leverage Linux’s latest innovations, including io_uring, to achieve lower latency and higher throughput in critical paths.
+                <p class="font-[400] mobile-text-size md:text-[18px] text-[#D5D8E2] mt-3">
+                    <span class="block text-[17px] md:text-[19px] text-white mb-2">Kernel-Level Performance</span>
+                    Leverage Linux's latest innovations, including io_uring, to achieve lower latency and higher throughput in critical paths.
                 </p>
             </div>
 
             <!-- Capability 3 -->
-            <div class="bg-[#070B19] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
-                    <img class="h-9 w-auto" src="assets/office.svg" alt="Office">
+            <div class="bg-[#070B19] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-3 md:p-4">
+                    <img class="h-7 md:h-9 w-auto" src="assets/office.svg" alt="Office">
                 </div>
-                <p class="font-[400] text-[18px] text-[#D5D8E2]">
-                    <span class="block text-[19px] text-white mb-2">Flexible Consensus</span>
+                <p class="font-[400] mobile-text-size md:text-[18px] text-[#D5D8E2] mt-3">
+                    <span class="block text-[17px] md:text-[19px] text-white mb-2">Flexible Consensus</span>
                     Choose between leader-based protocols or leaderless protocols depending on your system requirements.
                 </p>
             </div>
 
             <!-- Capability 4 (full-width) -->
-            <div class="bg-[#070B19] rounded-3xl border border-1 border-[#202B4C] p-4 lg:col-span-3">
-                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-4">
-                    <img class="h-9 w-auto" src="assets/scale.svg" alt="Scale">
+            <div class="bg-[#070B19] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4 lg:col-span-3">
+                <div class="inline-block bg-gradient-to-b from-[#0D1326] to-[#141B32] rounded-xl border border-1 border-[#202B4C] p-3 md:p-4">
+                    <img class="h-7 md:h-9 w-auto" src="assets/scale.svg" alt="Scale">
                 </div>
-                <p class="font-[400] text-[18px] text-[#D5D8E2]">
-                    <span class="block text-[19px] text-white mb-2">Designed for Any Scale</span>
+                <p class="font-[400] mobile-text-size md:text-[18px] text-[#D5D8E2] mt-3">
+                    <span class="block text-[17px] md:text-[19px] text-white mb-2">Designed for Any Scale</span>
                     Run Arkthos within a single data center or across globally distributed clusters for availability and performance.
                 </p>
             </div>
@@ -211,44 +293,48 @@
             <div class="text-[12px] font-black leading-[120%] bg-gradient-to-r from-[#0076FF] to-[#00ABFF] bg-clip-text text-transparent">
                 WHY SHOULD YOU CHOOSE
             </div>
-            <div class="text-[24px] font-medium leading-[120%] text-white mt-1">
+            <div class="text-[20px] md:text-[24px] font-medium leading-[120%] text-white mt-1">
                 Arkthos?
             </div>
         </div>
 
-        <!-- Row 1 -->
-        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
-            <img class="w-[100px] min-h-[60px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center" src="assets/lock.png" alt="Lock">
-            <div class="flex-grow bg-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <p class="font-[400] text-[20px] text-[#D5D8E2]">
+        <!-- Row 1 - Side by side layout on all screens -->
+        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2 mobile-side-layout">
+            <div class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[60px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center overflow-hidden">
+                <img class="w-[50px] md:w-[60px]" src="assets/lock.png" alt="Lock">
+            </div>
+            <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
                     Distributed systems are never one-size-fits-all. Arkthos is built for engineers who need control, performance, and flexibility.
                 </p>
             </div>
         </div>
 
-        <!-- Row 2 -->
-        <div class="flex w-full items-stretch gap-x-2 pt-2 pb-2">
-            <div class="flex-grow bg-[#141B32] rounded-3xl border border-1 border-[#202B4C] p-4">
-                <p class="font-[400] text-[20px] text-[#D5D8E2]">
-                    It doesn’t force you into one protocol or architecture -- it gives you the tools to experiment and optimize.
+        <!-- Row 2 - Side by side layout on all screens -->
+        <div class="flex w-full items-stretch gap-x-2 pb-2 mobile-side-layout">
+            <div class="flex-grow bg-[#141B32] mobile-rounded md:rounded-3xl border border-1 border-[#202B4C] mobile-card-padding md:p-4">
+                <p class="font-[400] mobile-text-size mobile-compact-text xs-compact-text md:text-[20px] text-[#D5D8E2]">
+                    It doesn't force you into one protocol or architecture -- it gives you the tools to experiment and optimize.
                 </p>
             </div>
-            <img class="w-[100px] min-h-[60px] rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center" src="assets/chip.png" alt="Chip">
+            <div class="bg-[#070B19] mobile-icon-size xs-icon-size md:w-[100px] md:min-h-[60px] mobile-rounded md:rounded-3xl border border-[#202B4C] flex flex-shrink-0 justify-center items-center overflow-hidden">
+                <img class="w-[50px] md:w-[60px]" src="assets/chip.png" alt="Chip">
+            </div>
         </div>
 
         <!-- Footer links -->
         <div class="pl-2 mt-8 text-left">
             <a href="https://github.com/arkthos-smr"
-               class="text-[24px] font-medium leading-[120%] text-white hover:text-[#00ABFF] transition-colors">
+               class="text-[20px] md:text-[24px] font-medium leading-[120%] text-white hover:text-[#00ABFF] transition-colors">
                 GitHub
             </a>
-            <div class="text-[24px] font-medium leading-[120%] text-white mt-2">
+            <div class="text-[20px] md:text-[24px] font-medium leading-[120%] text-white mt-2">
                 Contact us
             </div>
 
             <!-- Footer logo -->
-            <img class="h-6 w-auto mt-14" src="assets/logo.svg" alt="Arkthos">
-            <div class="text-[14px] font-400 leading-[120%] text-[#D5D8E2] mt-2 mb-8">
+            <img class="h-5 md:h-6 w-auto mt-10 md:mt-14" src="assets/logo.svg" alt="Arkthos">
+            <div class="text-[12px] md:text-[14px] font-400 leading-[120%] text-[#D5D8E2] mt-2 mb-8">
                 © 2025. Arkthos.
             </div>
         </div>
